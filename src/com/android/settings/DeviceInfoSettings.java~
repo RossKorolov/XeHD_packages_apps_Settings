@@ -103,13 +103,21 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL);
         setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
+<<<<<<< HEAD
         findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
         setValueSummary(KEY_XEHD_VERSION, "ro.xehdversion");
+=======
+        setStringSummary(KEY_KERNEL_VERSION, getFormattedKernelVersion());
+        findPreference(KEY_KERNEL_VERSION).setEnabled(true);
+        setValueSummary(KEY_LIQUID_VERSION, "ro.liquid.version");
+        setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
+        findPreference(KEY_SM_AND).setEnabled(true);
         findPreference(KEY_SM_KERNEL).setEnabled(true);
         findPreference(KEY_SM_FLAGS).setEnabled(true);
         setValueSummary(KEY_SM_AND, "ro.sm.android");
         setValueSummary(KEY_SM_KERNEL, "ro.sm.kernel");
         setValueSummary(KEY_SM_FLAGS, "ro.sm.flags");
+>>>>>>> 9f50bec... gcc and gcc flags info (2/2)
 
         if (!SELinux.isSELinuxEnabled()) {
             String status = getResources().getString(R.string.selinux_status_disabled);
