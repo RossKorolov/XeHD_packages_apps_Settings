@@ -78,6 +78,12 @@
             android:defaultValue="true"
             android:dependency="show_clear_all_recents" />
 
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="recents_show_search_bar"
+            android:title="@string/recents_show_searchbar"
+            android:summary="@string/keywords_recents_show_searchbar"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -93,6 +99,11 @@
             android:key="navigation_bar_dimen"
             android:fragment="com.android.settings.xenonhd.NavBarDimen"
             android:title="@string/navbar_dimen_title" />
+
+        <PreferenceScreen
+            android:key="navigation_bar_ring"
+            android:fragment="com.android.settings.cyanogenmod.NavRing"
+            android:title="@string/navigation_ring_title" />
 
     </PreferenceCategory>
 
@@ -136,6 +147,11 @@
             android:key="screen_recorder"
             android:title="@string/screen_recorder_title"
             android:fragment="com.android.settings.xenonhd.ScreenRecorderSettings" />
+
+        <ListPreference
+            android:key="lcd_density"
+            android:title="@string/lcd_density"
+            android:persistent="false" />
 
     </PreferenceCategory>
 

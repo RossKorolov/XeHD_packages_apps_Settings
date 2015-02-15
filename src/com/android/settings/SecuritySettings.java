@@ -107,11 +107,13 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String KEY_TRUST_AGENT = "trust_agent";
     private static final String KEY_SCREEN_PINNING = "screen_pinning_settings";
     private static final String KEY_SMS_SECURITY_CHECK_PREF = "sms_security_check_limit";
+    private static final String KEY_DISABLE_QS = "disable_qs";
 
     // These switch preferences need special handling since they're not all stored in Settings.
     private static final String SWITCH_PREFERENCE_KEYS[] = { KEY_LOCK_AFTER_TIMEOUT,
             KEY_LOCK_ENABLED, KEY_VISIBLE_PATTERN, KEY_BIOMETRIC_WEAK_LIVELINESS,
-            KEY_POWER_INSTANTLY_LOCKS, KEY_SHOW_PASSWORD, KEY_TOGGLE_INSTALL_APPLICATIONS };
+            KEY_POWER_INSTANTLY_LOCKS, KEY_SHOW_PASSWORD, KEY_TOGGLE_INSTALL_APPLICATIONS,
+            KEY_DISABLE_QS };
 
     // Only allow one trust agent on the platform.
     private static final boolean ONLY_ONE_TRUST_AGENT = true;
@@ -138,6 +140,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private ListPreference mLockNumpadRandom;
 
     private ListPreference mSmsSecurityCheck;
+    private SwitchPreference mDisableQSOnSecureLS;
 
     private boolean mIsPrimary;
 
@@ -293,6 +296,15 @@ public class SecuritySettings extends SettingsPreferenceFragment
             mPowerButtonInstantlyLocks.setSummary(getString(
                     R.string.lockpattern_settings_power_button_instantly_locks_summary,
                     trustAgentPreference.getTitle()));
+        }
+
+        if(mIsPrimary){
+            mDisableQSOnSecureLS = (SwitchPreference) root.findPreference(KEY_DISABLE_QS);
+            if (mDisableQSOnSecureLS != null) {
+                mDisableQSOnSecureLS.setChecked(isQSDisabled());
+            }
+        } else {
+            root.removePreference(root.findPreference(KEY_DISABLE_QS));
         }
 
         // don't display visible pattern if biometric and backup is not pattern
@@ -477,6 +489,12 @@ public class SecuritySettings extends SettingsPreferenceFragment
                                       Settings.Global.INSTALL_NON_MARKET_APPS, 0) > 0;
     }
 
+    private boolean isQSDisabled() {
+        // default disabled
+        return Settings.Global.getInt(getContentResolver(),
+                Settings.Global.DISABLE_QS_ON_SECURE_LS, 0) != 0;
+    }
+
     private void setNonMarketAppsAllowed(boolean enabled) {
         final UserManager um = (UserManager) getActivity().getSystemService(Context.USER_SERVICE);
         if (um.hasUserRestriction(UserManager.DISALLOW_INSTALL_UNKNOWN_SOURCES)) {
@@ -619,6 +637,10 @@ public class SecuritySettings extends SettingsPreferenceFragment
             mPowerButtonInstantlyLocks.setChecked(lockPatternUtils.getPowerButtonInstantlyLocks());
         }
 
+        if (mDisableQSOnSecureLS != null) {
+            mDisableQSOnSecureLS.setChecked(isQSDisabled());
+        }
+
         if (mShowPassword != null) {
             mShowPassword.setChecked(Settings.System.getInt(getContentResolver(),
                     Settings.System.TEXT_SHOW_PASSWORD, 1) != 0);
@@ -758,6 +780,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
             Integer.valueOf((String) value));
             mLockNumpadRandom.setValue(String.valueOf(value));
             mLockNumpadRandom.setSummary(mLockNumpadRandom.getEntry());
+        } else if (KEY_DISABLE_QS.equals(key)) {
+            Settings.Global.putInt(getContentResolver(), Settings.Global.DISABLE_QS_ON_SECURE_LS,
+                    ((Boolean) value) ? 1 : 0);
         }
         return result;
     }

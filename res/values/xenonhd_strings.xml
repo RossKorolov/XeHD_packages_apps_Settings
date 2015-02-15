@@ -481,4 +481,16 @@
 
     <!-- BitSyko Layers  -->
     <string name="bitsyko_layers_str">Layers</string>
+
+    <!-- LCD density -->
+    <string name="lcd_density">LCD density</string>
+    <string name="dialog_title_lcd_density">LCD density</string>
+    <string name="lcd_density_summary">%d DPI</string>
+    <string name="lcd_density_default">default</string>
+    <string name="lcd_density_unsupported">Unsupported</string>
+    <string name="restarting_ui">Restarting UI</string>
+
+    <!-- Disable QS setting -->
+    <string name="secure_lockscreen_disable_qs">Disable QuickSettings access</string>
+    <string name="secure_lockscreen_disable_qs_summary">Disable QuickSettings access on secure lockscreen.</string>
 </resources>

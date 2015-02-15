@@ -57,16 +57,6 @@
                 android:title="@string/lift_to_wake_title"
                 android:persistent="false" />
 
-        <PreferenceScreen
-                android:key="expanded_desktop"
-                android:title="@string/power_menu_expanded_desktop"
-                android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
-
-        <ListPreference
-                android:key="lcd_density"
-                android:title="@string/lcd_density"
-                android:persistent="false" />
-
         <com.android.settings.WarnedListPreference
                 android:key="font_size"
                 android:title="@string/title_font_size"

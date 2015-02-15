@@ -326,6 +326,15 @@
     <string name="disable_navkeys_title">Enable on-screen nav bar</string>
     <string name="disable_navkeys_summary">Enable on-screen navigation bar and disable hardware buttons</string>
 
+    <!-- Navigation Bar -->
+    <string name="navigation_bar_category">Navigation bar</string>
+    <string name="navigation_bar_title">Buttons and layout</string>
+    <string name="navigation_bar_help_text">To get started tap the edit icon to unlock the navigation bar for editing.\n\nYou can tap an icon to change its shortcut, or long press an icon to re-arrange the layout.\n\nTap \'Save\' to commit your changes, or \'Restore defaults\' to reset the layout to default settings.</string>
+    <string name="navigation_restore_button_text">Restore\ndefaults</string>
+    <string name="navigation_edit_button_text">Edit</string>
+    <string name="navigation_save_button_text">Save</string>
+    <string name="navigation_bar_reset_message">Delete current settings and restore the default layout?</string>
+
     <!-- tap-to-sleep -->
     <string name="double_tap_to_sleep_title">Double-tap to sleep</string>
     <string name="double_tap_to_sleep_summary">Double tap on the status bar to put the device to sleep</string>
@@ -763,7 +772,7 @@
     <string name="expanded_hide_status">Hide status bar</string>
     <string name="expanded_hide_navigation">Hide navigation bar</string>
     <string name="expanded_hide_both">Hide both</string>
-    <string name="expanded_nothing_to_show">To add a custom per-app configuration for expanded state, set "Enabled for all" to the off position</string>
+    <string name="expanded_nothing_to_show">To add a custom per-app configuration for expanded state, set \'Enabled for all\' to the off position</string>
     <string name="expanded_desktop_state">Expanded state</string>
     <string name="expanded_enabled_for_all">Enabled for all</string>
     <string name="expanded_user_configurable">User configurable</string>
@@ -771,6 +780,7 @@
     <string name="lockscreen_settings_title">Lock screen</string>
     <string name="lockscreen_targets_message">Navigation bar shortcuts</string>
     <string name="lockscreen_default_target">Default</string>
+    <string name="lockscreen_none_target">None</string>
     <string name="lockscreen_message">Tap an icon on the left or right to reassign a lock screen shortcut.</string>
     <string name="lockscreen_choose_action_title">Choose action</string>
 
@@ -781,12 +791,39 @@
     <string name="whisperpush_registration_summary">Register for WhisperPush to enable encrypted SMS.</string>
     <string name="whisperpush_identitykey_title">Review identity keys</string>
 
-    <!-- Sound & display settings screen, setting options for LCD density -->
-    <string name="lcd_density">LCD density</string>
-    <string name="dialog_title_lcd_density">LCD density</string>
-    <string name="lcd_density_summary">%d DPI</string>
-    <string name="lcd_density_default">default</string>
-    <string name="lcd_density_unsupported">Unsupported</string>
-    <string name="restarting_ui">Restarting UI</string>
+    <string name="navigation_ring_title">Navigation ring targets</string>
+    <string name="navigation_ring_message">Tap the edit icon to open the navigation ring for editing.\n\nSelect a target to configure its behavior.\n\nTap the \'\u2713\' icon to save your changes, or \'Restore defaults\' to reset the settings to defaults.</string>
 
+    <!-- Stylus Icon -->
+    <string name="stylus_icon_enabled_title">Show icon when using stylus</string>
+    <string name="stylus_icon_enabled_summary">Show the pointer icon when hovering or drawing with the stylus</string>
+
+    <!-- Stylus Gestures -->
+    <string name="gestures_settings_title">Stylus gestures</string>
+    <string name="category_spen_title">Stylus gestures</string>
+    <string name="enable_subcat_title">Stylus</string>
+    <string name="enable_spen_title_head">Enable gestures</string>
+    <string name="enable_spen_summary_head">Use swipe gestures by holding down the stylus button</string>
+    <string name="gestures_subcat_title">Gestures</string>
+    <string name="gestures_left_spen_title_head">Left swipe</string>
+    <string name="gestures_right_spen_title_head">Right swipe</string>
+    <string name="gestures_up_spen_title_head">Up swipe</string>
+    <string name="gestures_down_spen_title_head">Down swipe</string>
+    <string name="gestures_long_spen_title_head">Long press</string>
+    <string name="gestures_double_spen_title_head">Double tap</string>
+
+    <!-- Gestures Options -->
+    <string name="gestures_action_empty">No action</string>
+    <string name="gestures_action_home">Home</string>
+    <string name="gestures_action_back">Back</string>
+    <string name="gestures_action_menu">Menu</string>
+    <string name="gestures_action_search">Invoke search</string>
+    <string name="gestures_action_recent">Recent apps</string>
+
+    <!-- Stylus gestures -->
+    <string name="stylus_app_not_installed">%s is not installed</string>
+
+    <!-- Show/Hide Search Bar -->
+    <string name="recents_show_searchbar">Show Search Bar in Recents</string>
+    <string name="keywords_recents_show_searchbar">Enable or disable the Google search bar in the recents menu</string>
 </resources>
